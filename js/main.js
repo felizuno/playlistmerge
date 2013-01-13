@@ -14,15 +14,15 @@
         $('.combinedetails').show();
       });
 
-      $('#cancel').bind('click', function(e) {
-        e.preventDefault();
+      $('#cancel').bind('click', function(x) {
+        x.preventDefault();
         $('.combinedetails').hide();
         $('#pldesc textarea').attr('value', '');
         K.playlister.newListKeys = [];
       });
 
-      $('#merge').bind('click', function(e) {
-        e.preventDefault();
+      $('#merge').bind('click', function(x) {
+        x.preventDefault();
         K.playlister.makeNewPlaylist();
       })
 
@@ -37,8 +37,8 @@
 
     _initUserButton: function() {
       if (R.authenticated()) {
-        $('.greeting').remove();
         K.playlister.getUserPlaylists();
+        $('.greeting').remove();
         var displayName = R.currentUser.get('vanityName');
         $('#rdiobutton')
           .attr('value', 'Logged in as: ' + displayName)
@@ -58,11 +58,13 @@
       var $button = $(button);
 
       if ($button.hasClass('chosen')) {
-        $button.toggleClass('chosen').appendTo('.userplaylists');
+        $button.appendTo('.userplaylists');
       } else {
-        $button.toggleClass('chosen').appendTo('.confirmdisplay');
+        $button.appendTo('.confirmdisplay');
       }
-      
+
+      $button.toggleClass('chosen');
+            
       var num = $('.chosen').length;
       if (num >= 2) {
         $('#proceed').show();
