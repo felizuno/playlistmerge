@@ -33,7 +33,7 @@
 		      }).bind('click', function() {
 		      	K.toggleChosen(this);
 		      }).appendTo('.userplaylists');
-		      
+
 		    $('.confirmbox').show();
 		},
 
@@ -49,8 +49,10 @@
 					tracks: K.playlister.newListKeys.join()
 				},
 				success: function() {
+			        $('.playlistbutton').remove();
+			        K.playlister.getUserPlaylists();
 			        $('.combinedetails').hide();
-			        $('.confirmdisplay .playlistbutton').removeClass('chosen').appendTo('.userplaylists');
+
 				}
 			});
 		}
