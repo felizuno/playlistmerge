@@ -1,0 +1,135 @@
+@lightshadow: 1px 1px rgba(255, 255, 255, 0.7);
+@darkshadow: 1px 1px rgba(0, 0, 0, 0.7);
+@whitebg: rgba(255, 255, 255, 0.1);
+@blackbg: rgba(0, 0, 0, 0.3);
+@deepblue: #0b0e29;
+@seafoam: #088F71;
+
+.box_shadow(@shadow: 1px 1px 4px 0px @deepblue) {
+  -webkit-box-shadow: @shadow; /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+          box-shadow: @shadow; /* Opera 10.5, IE9+, Firefox 4+, Chrome 6+, iOS 5 */
+}
+
+html{
+	background-image: url('/img/noisynet.png');
+    font-family: 'Press Start 2P'; 
+    font-weight: normal; 
+    font-style: normal; 
+	color: #DDD;
+}
+
+button,
+.maincontent input{
+	border: none;
+	color: #DDD;
+    font-family: 'Press Start 2P';
+    font-size: 16px;
+	background-color: @deepblue;
+	.box_shadow;
+	height: 60px;
+}
+
+.header {
+	margin-bottom: 20px;
+	padding: 20px;
+	background-color: @seafoam;
+
+	.titlecontainer {
+
+		h1, h2 {
+			margin: 0;
+		}
+
+		h2 {
+			font-size: 12px;
+		}
+	}
+	.right {
+		height: 30px;
+		float: right;
+	}
+
+}
+
+.maincontent {
+	color: #AAA;
+	width: 100%;
+	min-width: 400px;
+
+	.greeting {
+		margin: 40px 20px;
+		max-width: 750px;
+
+		& p {
+			padding: 20px;
+		}
+	}
+
+	#rdiobutton {
+		position: fixed;
+		bottom: 0;
+		width: 100%;
+		background-color: @seafoam;
+		margin: 60px 0 0 -8px;
+	}
+
+	.userplaylists {
+		text-align: center;
+		margin-top: 30px;
+	}
+
+	.playlistbutton {
+		background-color: @whitebg;			
+		display: inline-block;
+		cursor: pointer;
+		margin: 10px;
+		padding: 10px;
+	}
+
+	.chosen {
+		background-color: @blackbg;
+	}
+
+	.confirmbox {
+		text-align: center;
+		margin: 20px;
+		height: 20%;
+
+		.confirmdisplay {
+			margin-top: 10px;
+		}
+
+		#reset, #proceed {
+			margin: 20px 10px;
+		}
+	}
+}
+
+.combinedetails, #about {
+	display:none;
+	position: fixed;
+	overflow: hidden;
+	top: 50px;
+	left: 50px;
+	width: 450px;
+	background-color: #333;
+	.box_shadow(3px 3px 10px 0 #111);
+
+	input, textarea {
+		color: #DDD;
+		border: none;
+		background-color: @whitebg;
+		display: block;
+		min-width: 400px;
+		max-width: 400px;
+		max-height: 300px;
+	}
+
+	a {
+		color: @seafoam;
+	}
+}
+
+.combinedetails * {
+	margin: 10px;
+}
