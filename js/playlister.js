@@ -36,8 +36,9 @@
 		},
 
 		makeNewPlaylist: function() {
-			plName = $('#plname input').attr('value');
-			plDesc = $('#pldesc textarea').attr('value');
+			var plName = $('#plname input').attr('value');
+			var plDesc = $('#pldesc textarea').attr('value');
+	        $('#newlist').html(plName);
 
 			R.request({
 				method: 'createPlaylist',
@@ -47,10 +48,10 @@
 					tracks: K.playlister.newListKeys.join()
 				},
 				success: function() {
-			        $('.playlistbutton').remove();
+			        $('.playlistbutton').not('#newlist').remove();
+			        $('#sucessscreen').show()
 			        K.playlister.getUserPlaylists();
 			        $('.combinedetails').hide();
-
 				}
 			});
 		}

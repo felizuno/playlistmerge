@@ -33,6 +33,10 @@
       $('#about').bind('click', function() {
         $(this).hide();
       });
+
+      $('#sucessscreen').bind('click', function() {
+        $(this).hide();
+      });
     },
 
     _initUserButton: function() {
@@ -41,7 +45,7 @@
         $('.greeting').remove();
         var displayName = R.currentUser.get('vanityName');
         $('#rdiobutton')
-          .attr('value', 'Logged in as: ' + displayName)
+          .attr('value', 'Logged in as: ' + displayName + ', click to open account')
           .bind('click', function() {
             window.open("http://www.rdio.com/people/"+ displayName);
         }); 
@@ -75,18 +79,22 @@
 
     getChosen: function() {
       var $choices = $('.chosen');
-      var ph = 'Combination of: ';
+      var pln = 'Combo of: ';
+      var pld = 'Combination of: ';
 
       $.each($choices, function(i, v) {
-        ph += $(v).text() + ' + ';
+        pln += $(v).text() + ', ';
+        pld += $(v).text() + ' + ';
         _.each(K.playlister.rdioPlaylists, function(v2, i2) {
             if (v2.name == v.innerHTML) {
               K.addChosen(v2.trackKeys);
             }
         });
       });
-      ph = ph.slice(0, ph.length - 3);
-      $('#pldesc textarea').attr('value', ph);
+      pln = pln.slice(0, pln.length - 2);
+      pld = pld.slice(0, pld.length - 3);
+      $('#plname input').attr('value', pln);
+      $('#pldesc textarea').attr('value', pld + '\rMade by Playlist Merge http://playlistmerge.appspot.com');
     },
 
     addChosen: function(keyArray) {

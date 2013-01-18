@@ -38,7 +38,7 @@
 
 	<form class="combinedetails" name="newplaylist">
 		<div id="plname">New Playlist Name:<input type="text" autofocus required placeholder="Type a name here" title="Playlist Name" /></div>
-		<div id="pldesc">Description:<textarea required placeholder="Type a description for this playlist here" title="Playlist Description"></textarea></div>
+		<div id="pldesc" style="display:none;">Description:<textarea required placeholder="Type a description for this playlist here" title="Playlist Description"></textarea></div>
 		<button id="cancel">Go Back</button>
 		<button type="submit" id="merge">Make it so!</button>
 	</form>
@@ -47,6 +47,12 @@
 		<div class="header"><div class="titlecontainer"><h1>about</h1></div></div>
 		<p>Playlist Merge relies on jQuery, Underscore, and the Rdio API. You can view the <a href="http://github.com/felizuno/" target="_blank">SOURCE</a> on GitHub.</p>
 		<p>Writing this app took less time than it would take to drag 100 tracks from one playlist to another individually. Hopefully it will save you some time as well. FWIW, this app was made while listening to <a href="http://www.rdio.com/artist/Two_Fingers/album/Stunt_Rhythms/">"Stunt Rythms" by Two Fingers</a></p>
+		<div class="right">[Click to close]</div>
+	</div>
+	<div id="sucessscreen">
+		<div class="header"><div class="titlecontainer"><h1>You Win!</h1></div></div>
+		<p>Playlist merge has successfully made your new playlist: <div id="newlist" class="playlistbutton"></div></p>
+		<p>If Playlist Merge helped you, you should <a href="http://www.twitter.com/KevinPEwing/" target="_blank">follow me on twitter</a> to receive updates about this and other apps I maintain.</p>
 		<div class="right">[Click to close]</div>
 	</div>
 </body>

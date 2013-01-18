@@ -24,6 +24,7 @@ a {
 
 button,
 .maincontent input{
+	cursor: pointer;
 	border: none;
 	color: #DDD;
     font-family: 'Press Start 2P';
@@ -55,6 +56,14 @@ button,
 
 }
 
+.playlistbutton {
+	background-color: @whitebg;			
+	display: inline-block;
+	cursor: pointer;
+	margin: 10px;
+	padding: 10px;
+}
+
 .maincontent {
 	color: #AAA;
 	width: 100%;
@@ -82,13 +91,6 @@ button,
 		margin-top: 30px;
 	}
 
-	.playlistbutton {
-		background-color: @whitebg;			
-		display: inline-block;
-		cursor: pointer;
-		margin: 10px;
-		padding: 10px;
-	}
 
 	.chosen {
 		background-color: @blackbg;
@@ -109,7 +111,9 @@ button,
 	}
 }
 
-.combinedetails, #about {
+.combinedetails, 
+#about,
+#sucessscreen {
 	display:none;
 	position: fixed;
 	overflow: hidden;
@@ -134,7 +138,7 @@ button,
 	}
 }
 
-#about p{
+p{
 	padding: 0 20px;
 }
 
