@@ -4,10 +4,9 @@ http://playlistmerge.appspot.com
 
 #About
 Playlist merge helps you combine two or more Rdio playlists into a new playlist.
+Because it copies the chosen playlists together, there is no risk of losing or altering your original playlists.
 
 It uses an awesome open font: http://openfontlibrary.org/face/press-start-2p
-
-Because it copies the chosen playlists together, there is no risk of losing or altering your original playlists.
 
 #Credits
 * Ian Gilman for feedback
