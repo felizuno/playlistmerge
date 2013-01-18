@@ -5,8 +5,6 @@
 		newListKeys: [],
 
 		getUserPlaylists: function() {
-		    var self = this;
-
 		    R.ready(function() {
 			    R.request({
 			        method:"getUserPlaylists",

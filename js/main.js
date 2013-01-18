@@ -78,7 +78,7 @@
       var ph = 'Combination of: ';
 
       $.each($choices, function(i, v) {
-        ph += v.innerHTML + ' + ';
+        ph += $(v).text() + ' + ';
         _.each(K.playlister.rdioPlaylists, function(v2, i2) {
             if (v2.name == v.innerHTML) {
               K.addChosen(v2.trackKeys);
