@@ -5,11 +5,6 @@
 @deepblue: #0b0e29;
 @seafoam: #088F71;
 
-.box_shadow(@shadow: 1px 1px 4px 0px @deepblue) {
-  -webkit-box-shadow: @shadow; /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
-          box-shadow: @shadow; /* Opera 10.5, IE9+, Firefox 4+, Chrome 6+, iOS 5 */
-}
-
 html{
 	background-image: url('/img/noisynet.png');
     font-family: 'Press Start 2P'; 
@@ -30,7 +25,6 @@ button,
     font-family: 'Press Start 2P';
     font-size: 16px;
 	background-color: @deepblue;
-	.box_shadow;
 	height: 60px;
 }
 
@@ -121,7 +115,7 @@ button,
 	left: 50px;
 	width: 450px;
 	background-color: #333;
-	.box_shadow(3px 3px 10px 0 #111);
+	box-shadow: 3px 3px 10px 0 #111;
 
 	input, textarea {
 		color: #DDD;
